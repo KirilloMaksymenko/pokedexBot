@@ -4,8 +4,6 @@
 
 import requests
 from bs4 import BeautifulSoup
-import io
-from PIL import Image
 import telebot
 
 bot = telebot.TeleBot("5694918426:AAF9pjZxTaNsuMFUwqwCX96RqD8NIWQVBsc")
@@ -18,8 +16,6 @@ def send_welcome(message):
 def send_welcome(message):
     id_name = message.text.replace("/find ","")
     text,img_url = make_text(get_data(id_name))
-
-    
 
     bot.send_photo(message.chat.id, img_url)
     bot.send_message(message.chat.id, text)
